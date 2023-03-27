@@ -43,14 +43,10 @@ function inicio() {
 }		
 
 function ver_saldo() {
-    if (senha(true)) {
-    alert('Seu saldo atual é: ' + saldo);  
-    inicio()  
+        alert('Seu saldo atual é: ' + saldo);  
+        inicio()  
     }
-    else {
-        inicio()
-    };
-}
+
 
 function fazer_deposito() {
 if (senha(true)) {
@@ -79,7 +75,7 @@ function fazer_saque() {
         var saque = parseFloat(prompt('Qual o valor para saque?'));
         if (isNaN(saque) || saque === '') {
             alert('Por favor, informe um número:');
-            fazer_saque();
+            inicio();
         } 
         else if (saque > saldo){
             alert("Operação não autorizada, saldo insuficiente.")
@@ -105,24 +101,24 @@ function erro() {
 
 function transferencia(){
     if (senha(true)) {
-    let destino = Number(prompt("Digite o número da conta que você deseja transferir: "));
-    let valor_transfer = Number(prompt("Digite o valor que deseja transferir: "));
-    if (valor_transfer > saldo) {
-        alert("Você não tem saldo suficiente.")
-        transferencia();
-    }
-    else if (valor_transfer <= 0){
-        alert("Valor inválido.")
-    }
-    else if (destino <= 0){
-        alert("Erro, tente novamente.")
-        transferencia();
-    }
-    else {
-        saldo = saldo - valor_transfer;
-        alert(`A transferência foi feita, seu saldo atual é de ${saldo}`)
-        transferencia();
-    }
+        let destino = Number(prompt("Digite o número da conta que você deseja transferir: "));
+        let valor_transfer = Number(prompt("Digite o valor que deseja transferir: "));
+        if (valor_transfer > saldo) {
+            alert("Você não tem saldo suficiente.")
+            transferencia();
+        }
+        else if (valor_transfer <= 0){
+            alert("Valor inválido.")
+        }
+        else if (destino <= 0){
+            alert("Erro, tente novamente.")
+            transferencia();
+        }
+        else {
+            saldo = saldo - valor_transfer;
+            alert(`A transferência foi feita, seu saldo atual é de ${saldo}`)
+            inicio();
+        }
     }
     else {
         inicio()
@@ -130,21 +126,21 @@ function transferencia(){
 }
 
 function extrato() {
-    if (senha(true)) {
-    let opcao = parseInt(prompt("Extrato: \n1- Histórico \n 2- Valor da fatura \n 3- Sair "))
-    switch(opcao){
-        case 1: 
-            alert("Item: Camiseta branca, Loja: Hering, Preço: R$ 50,00, Data da compra: 15/02/2022 \nItem: Tênis de corrida, Loja: Nike,Preço: R$ 250,00,Data da compra: 03/03/2022");
-            inicio();
-            break;
-        case 2:
-            alert(`A fatura atual está no valor de 300R$`);
-            inicio();
-            break;
-        case 3:
-            sair();
-            break;
-    }
+        if (senha(true)) {
+        let opcao = parseInt(prompt("Extrato: \n1- Histórico \n 2- Valor da fatura \n 3- Voltar "))
+        switch(opcao){
+            case 1: 
+                alert("Item: Camiseta branca, Loja: Hering, Preço: R$ 50,00, Data da compra: 15/02/2022 \nItem: Tênis de corrida, Loja: Nike,Preço: R$ 250,00,Data da compra: 03/03/2022");
+                inicio();
+                break;
+            case 2:
+                alert(`A fatura atual está no valor de 300R$`);
+                inicio();
+                break;
+            case 3:
+                inicio();
+                break;
+        }
 }
 else {
     inicio()
