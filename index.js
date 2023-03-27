@@ -4,7 +4,6 @@ var saldo = 100.5;
 
 inicio();
 
-
 function senha(){
 let senha = Number(prompt("Digite sua senha: "));
     if (senha == 3589){
@@ -63,6 +62,7 @@ if (senha(true)) {
     } 
     else if (deposito <= 0){
         alert("Operação não autorizada.")
+        inicio();
     }
     else {
         saldo += deposito;
@@ -135,9 +135,11 @@ function extrato() {
     switch(opcao){
         case 1: 
             alert("Item: Camiseta branca, Loja: Hering, Preço: R$ 50,00, Data da compra: 15/02/2022 \nItem: Tênis de corrida, Loja: Nike,Preço: R$ 250,00,Data da compra: 03/03/2022");
+            inicio();
             break;
         case 2:
             alert(`A fatura atual está no valor de 300R$`);
+            inicio();
             break;
         case 3:
             sair();
