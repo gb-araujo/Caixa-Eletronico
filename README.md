@@ -23,7 +23,7 @@ Com o projeto do caixa eletrônico, encontramos algumas questões que são muito
 
 - Caso o usuário informe um valor para depósito igual ou menor que zero, não deixe a operação ocorrer. Exiba uma mensagem de "Operação não autorizada". 
 
-- Sempre que o usuário for acessar o saldo, sacar, retirar o extrato ou transferir dinheiro é necessário que ele informe uma senha. Essa senha deve ser validada com uma condicional. A senha é 3589.
+- Sempre que o usuário for acessar o saldo, sacar, retirar o extrato ou transferir dinheiro é necessário que ele informe uma senha. Essa senha deve ser validada com uma condicional. <strong>A senha é 3589.</strong>
 
 - Caso a senha informada não seja a correta, é necessário chamar a função atual novamente. 
 
