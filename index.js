@@ -1,6 +1,6 @@
 var usuario = String(prompt("Olá, qual seu nome? "));
 alert(`Olá ${usuario} é um prazer ter você por aqui!`)
-var saldo = 100.5; 
+var saldo = 73.90; 
 
 inicio();
 
@@ -43,13 +43,13 @@ function inicio() {
 }		
 
 function ver_saldo() {
-        alert('Seu saldo atual é: ' + saldo);  
+        alert('Seu saldo atual é: ' + saldo.toFixed(2));  
         inicio()  
     }
 
 
 function fazer_deposito() {
-if (senha(true)) {
+if (senha()) {
     var deposito = parseFloat(prompt('Qual o valor para depósito?'));
     // Not a Number
     if (isNaN(deposito) || deposito === '') {
@@ -66,12 +66,11 @@ if (senha(true)) {
     }
 }
 else {
-    alert("senha inválida");
-inicio()};
+    fazer_deposito()};
 }
 
 function fazer_saque() {
-    if (senha(true)) {
+    if (senha()) {
         var saque = parseFloat(prompt('Qual o valor para saque?'));
         if (isNaN(saque) || saque === '') {
             alert('Por favor, informe um número:');
@@ -79,17 +78,19 @@ function fazer_saque() {
         } 
         else if (saque > saldo){
             alert("Operação não autorizada, saldo insuficiente.")
+            ver_saldo();
+            inicio();
         }
         else if (saque <= 0){
             alert("Operação não autorizada, digite um valor válido.")
+            fazer_saque();
         }
         else {
             saldo -= saque;
             ver_saldo();
         }
     }else {
-        alert("senha inválida");
-    inicio()
+        fazer_saque();
     };
 }
 
@@ -100,7 +101,7 @@ function erro() {
 }
 
 function transferencia(){
-    if (senha(true)) {
+    if (senha()) {
         let destino = Number(prompt("Digite o número da conta que você deseja transferir: "));
         let valor_transfer = Number(prompt("Digite o valor que deseja transferir: "));
         if (valor_transfer > saldo) {
@@ -116,17 +117,17 @@ function transferencia(){
         }
         else {
             saldo = saldo - valor_transfer;
-            alert(`A transferência foi feita, seu saldo atual é de ${saldo}`)
+            alert(`A transferência foi feita, seu saldo atual é de ` + saldo.toFixed(2))
             inicio();
         }
     }
     else {
-        inicio()
+        transferencia();
     };
 }
 
 function extrato() {
-        if (senha(true)) {
+        if (senha()) {
         let opcao = parseInt(prompt("Extrato: \n1- Histórico \n 2- Valor da fatura \n 3- Voltar "))
         switch(opcao){
             case 1: 
@@ -143,7 +144,7 @@ function extrato() {
         }
 }
 else {
-    inicio()
+    extrato()
 };
 }
 
