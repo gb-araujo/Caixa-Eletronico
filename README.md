@@ -1,30 +1,21 @@
 # Caixa-Eletronico
  
-Agora é hora de pensar!
-Com o projeto do caixa eletrônico, encontramos algumas questões que são muito importantes, mas não foram aplicadas. Vamos aplicá-las uma a uma. 
+O projeto "Caixa eletronico" é uma atividade de programação que visa criar um sistema de caixa eletrônico com diversas funcionalidades, como visualização de saldo, saque, depósito, transferência e extrato. Ao longo do desenvolvimento do projeto, são apresentadas algumas questões importantes que devem ser aplicadas.
 
-- Ao acessar o sistema, pergunte o nome do usuário e diga "Olá {Nome} é um prazer ter você por aqui!".
+A primeira questão é a personalização do sistema. Ao acessar o sistema, o usuário deve ser recebido com uma mensagem de boas-vindas que inclua seu nome, tornando a experiência mais agradável e personalizada.
 
-- Na função "inicio", utilize escolha/caso (switch/case) para validar a opção escolhida pelo usuário. 
+Em seguida, é necessário utilizar a estrutura de escolha/caso (switch/case) para validar as opções escolhidas pelo usuário na função "inicio", garantindo que apenas as opções disponíveis sejam selecionadas.
 
-- Sempre que o usuário for sacar dinheiro, o valor restante não pode ser negativo, ou seja, caso o usuário tente sacar mais do que tem em saldo, a ação não deve ocorrer. Exiba uma mensagem de "Operação não autorizada". 
+Na opção de saque, é importante garantir que o usuário não possa sacar mais dinheiro do que tem em saldo, evitando saldos negativos. Também é importante garantir que o valor a ser sacado seja maior que zero, evitando operações inválidas.
 
-- Sempre que o usuário for sacar dinheiro, o valor a ser sacado não pode ser igual ou menor que zero. Exiba uma mensagem de "Operação não autorizada". 
+A opção de extrato deve incluir algumas compras ou depósitos fictícios para que o usuário possa visualizar suas transações anteriores.
 
-- Adicionar a opção para ver o extrato (Coloque algumas compras ou depósitos fictícios). 
+Na opção de transferência, é necessário informar o número da conta de destino e o valor a ser transferido. Também é importante garantir que o usuário não possa transferir mais dinheiro do que tem em saldo e que o valor a ser transferido seja maior que zero.
 
-- Adicionar a opção para fazer uma transferência. A transferência consiste em você informar o número de uma conta (pode ser qualquer número, mas obrigatoriamente um número, ou seja, nenhum outro caractere deve ser aceito), perguntar o valor da transferência e remover o valor da conta da mesma forma como na ação do saldo. Caso o usuário tente transferir mais do que tem em saldo, a ação não deve ocorrer. Exiba uma mensagem de "Operação não autorizada". 
+A ordem das opções no menu principal deve ser organizada de forma lógica e fácil de entender, com as opções mais utilizadas no início e as menos utilizadas no final.
 
-- Sempre que o usuário for transferir dinheiro,  o valor a ser transferido não pode ser igual ou menor que zero, ou seja, caso o usuário tente transferir mais do que tem em saldo, a ação não deve ocorrer. Exiba uma mensagem de "Operação não autorizada". 
+A função "erro" deve ser atualizada para incluir as novas opções do menu.
 
-- No menu principal, a ordem das opções deve ser: Saldo, Extrato, Saque, Depósito, Transferência e Sair. 
+Na opção de depósito, é importante garantir que o valor informado seja maior que zero, evitando operações inválidas.
 
-- Atualize a função "erro" com as novas opções do menu.
-
-- Caso o usuário informe um valor para depósito igual ou menor que zero, não deixe a operação ocorrer. Exiba uma mensagem de "Operação não autorizada". 
-
-- Sempre que o usuário for acessar o saldo, sacar, retirar o extrato ou transferir dinheiro é necessário que ele informe uma senha. Essa senha deve ser validada com uma condicional. <strong>A senha é 3589.</strong>
-
-- Caso a senha informada não seja a correta, é necessário chamar a função atual novamente. 
-
-- Quando o usuário escolher sair do sistema, exiba uma mensagem agradecendo por utilizar os serviços do banco: "{Nome}, foi um prazer ter você por aqui!".
+Por fim, é necessário adicionar uma senha para acessar as funcionalidades do caixa eletrônico, garantindo a segurança das informações do usuário. Caso a senha informada não seja correta, o sistema deve chamar a função atual novamente.
